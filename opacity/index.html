@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Opacity</h1>
+        
+        <div class="image-container">
+            <img id="displayedImage" src="images1.jpeg" alt="Selected Image">
+        </div>
+        
+        <label for="imageSelect">Select Image:</label>
+        <select id="imageSelect">
+            <option value="images1.jpeg">Image 1</option>
+            <option value="images2.jpeg">Image 2</option>
+            <option value="images3.jpeg">Image 3</option>
+        </select>
+        
+        <label for="opacitySelect">Select Opacity:</label>
+        <select id="opacitySelect">
+            <option value="kotak">kotak</option>
+            <option value="lingkaran">lingkaran</option>
+            <option value="segitiga">segitiga</option>
+        </select>
+        
+    </div>
+
+    <script src="script.js">
+        var imageSelect = document.getElementById('imageSelect');
+var opacitySelect = document.getElementById('opacitySelect');
+var displayedImage = document.getElementById('displayedImage');
+
+imageSelect.addEventListener('change', function() {
+    displayedImage.src = this.value;
+});
+
+opacitySelect.addEventListener('change', function() {
+    displayedImage.style.opacity = this.value;
+});
+
+    </script>
+
+</body>
+</html>

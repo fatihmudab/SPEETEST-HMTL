@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .image-container {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        #displayedImage {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s, clip-path 0.5s;
+        }
+        .kotak {
+            clip-path: none;
+            border-radius: 0;
+        }
+        .lingkaran {
+            clip-path: circle(50% at 50% 50%);
+            border-radius: 50%;
+        }
+        .segitiga {
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            border-radius: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Shape Selector</h1>
+        
+        <div class="image-container">
+            <img id="displayedImage" class="kotak" src="images1.jpeg" alt="Selected Image">
+        </div>
+        
+        <label for="imageSelect">Select Image:</label>
+        <select id="imageSelect">
+            <option value="images1.jpeg">Image 1</option>
+            <option value="images2.jpeg">Image 2</option>
+            <option value="images3.jpeg">Image 3</option>
+        </select>
+        
+        <label for="shapeSelect">Select Shape:</label>
+        <select id="shapeSelect">
+            <option value="kotak">kotak (Square)</option>
+            <option value="lingkaran">lingkaran (Circle)</option>
+            <option value="segitiga">segitiga (Triangle)</option>
+        </select>
+        
+    </div>
+
+    <script>
+        var imageSelect = document.getElementById('imageSelect');
+        var shapeSelect = document.getElementById('shapeSelect');
+        var displayedImage = document.getElementById('displayedImage');
+
+        imageSelect.addEventListener('change', function() {
+            displayedImage.src = this.value;
+        });
+
+        shapeSelect.addEventListener('change', function() {
+            
+            displayedImage.classList.remove('kotak', 'lingkaran', 'segitiga');
+
+            displayedImage.classList.add(this.value);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="">Status ayah*</label>
+        <br>
+        <input type="radio" name="hidup" id="hidup_ya" value="ya" onclick="showInput(this)">
+        <label for="hidup_ya">masi hidup</label>
+        <br>
+        <input type="radio" name="hidup" id="meninggal_tidak" value="tidak" onclick="showInput(this)">
+        <label for="meninggal_tidak">meninggal</label>
+        <br>
+        <input type="radio" name="hidup" id="tidakdiketahui_tidak" value="tidakdik" onclick="showInput(this)">
+        <label for="tidakdiketahui_tidak">tidak ketahuai</label>
+    </div>
+    <br>
+    <div id="wrap">
+    <div>
+      <label for="">pendidikan ayah*</label>
+      <br>
+      <input type="text">
+    </div>
+    <br>
+    <div>
+        <label for="">pekerjaan ayah*</label>
+        <br>
+        <input type="text">
+    </div>
+    <br>
+    <div>
+        <label for="">deskripsi pekerjaan ayah*</label>
+        <br>
+        <input type="text">
+    </div>
+    <br>
+    <div>
+       <label for="">Total penghasilan ayah per bulan*</label>
+       <br>
+        <input type="text">
+    </div>
+    <br>
+    <div>
+        <label for="" id="ubah">detail ayah bekerja,berapa lama sudah bekerja,kondisi kesehetan,dan karir profesinya*</label>
+        <br>
+         <input type="text">
+     </div>
+</div>
+
+
+    <script>
+        function showInput(e) {
+            let wrap = document.getElementById('wrap');
+            if(e.value == "ya") {
+                wrap.style.display = 'block';
+                document.getElementById("ubah").innerHTML = "detail ayah bekerja,berapa lama sudah bekerja,kondisi kesehetan,dan karir profesinya*"
+            }else if (e.value == "tidak") {
+                document.getElementById("ubah").innerHTML = "Detail Kematian Ayah"
+                wrap.style.display = 'block';
+            }else {
+                wrap.style.display = 'none';
+            }
+        }
+    
+
+    
+    </script>
+</body>
+</html>

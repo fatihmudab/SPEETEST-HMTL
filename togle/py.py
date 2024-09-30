@@ -1,0 +1,1 @@
+print('kafka arko ardissya ganteng ')

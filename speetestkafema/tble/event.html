@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Penyakit?</h1>
+        <input type="radio" name="penyakit" id="penyakit_ya" value="ya" onclick="showInput(this)">
+        <label for="penyakit_ya">Ya</label>
+        <input type="radio" name="penyakit" id="penyakit_tidak" value="tidak" onclick="showInput(this)">
+        <label for="penyakit_tidak">Tidak</label>
+    </div>
+    <div id="wrap" style="display: none;">
+        <div>
+            <label for="">Deskripsi</label>
+            <input type="text">
+            <h3>Sembuh?</h3>
+            <input type="radio" name="penyakit">
+            <label for="">sembuh</label>
+            <input type="radio" name="penyakit">
+            <label for="">belum</label>
+        </div>
+    </div>
+
+    <script>
+        function showInput(e) {
+            let wrap = document.getElementById('wrap');
+            if(e.value == "ya") {
+                wrap.style.display = 'block';
+            }else {
+                wrap.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

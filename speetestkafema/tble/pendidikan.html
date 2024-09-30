@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="jenjang">
+        Jenjang Pendidikan:
+        <select id="jenjang" name="jenjang" onchange="gantiJenjang(this)">
+            <option disabled selected hidden>Pilih</option>
+            <option value="SD">SD</option>
+            <option value="SMP">SMP</option>
+            <option value="SMA">SMA</option>
+            <option value="D3">D3</option>
+            <option value="D4/S1">D4/S1</option>
+        </select>
+    </label>
+    <br>
+    <label for="tingkat-sekolah">
+        Tingkat Sekolah:
+        <select name="tingkat" id="tingkat-sekolah">
+            <option disabled selected hidden>Silahkan Pilih Jenjang Sekolah</option>
+        </select>
+    </label>
+
+    <script>
+        function gantiJenjang(e) {
+            let tingkat = document.getElementById('tingkat-sekolah');
+
+            if (e.value == "SD") {
+                tingkat.innerHTML = `
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                `;
+            } else if (e.value == "SMP") {
+                tingkat.innerHTML = `
+                    <option value="1">7</option>
+                    <option value="2">8</option>
+                    <option value="3">9</option>
+                `;
+            }
+            else if (e.value == "SMA") {
+                tingkat.innerHTML = `
+                    <option value="1">10</option>
+                    <option value="2">11</option>
+                    <option value="3">12</option>
+                `;
+            }
+            else if (e.value == "D3") {
+                tingkat.innerHTML = `
+                    <option value="semester1">semester 1</option>
+                    <option value="2">semester 2</option>
+                    <option value="3">semester 3</option>
+                    <option value="3">semester 4</option>
+                    <option value="3">semester 5</option>
+                    <option value="3">semester 6</option>
+                `;
+            }
+            else if (e.value == "D4") {
+                tingkat.innerHTML = `
+                    <option value="semester1">semester 1</option>
+                    <option value="2">semester 2</option>
+                    <option value="3">semester 3</option>
+                    <option value="3">semester 4</option>
+                    <option value="3">semester 5</option>
+                    <option value="3">semester 5</option>
+                    <option value="3">semester 6</option>
+                    <option value="3">semester 8</option>
+                `;
+            }
+        }
+    </script>
+</body>
+
+</html>
